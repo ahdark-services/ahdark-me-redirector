@@ -10,6 +10,7 @@ import (
 	"github.com/ahdark-services/ahdark-me-redirector/internal/logger"
 	"github.com/ahdark-services/ahdark-me-redirector/internal/trace"
 	"github.com/ahdark-services/ahdark-me-redirector/server"
+	"github.com/ahdark-services/ahdark-me-redirector/service"
 )
 
 var tracer = otel.Tracer("entry")
@@ -22,6 +23,7 @@ func Entry() []fx.Option {
 		trace.Module(),
 		infra.Module(),
 		server.Module(),
+		service.Module(),
 		controller.Module(),
 	}
 }
