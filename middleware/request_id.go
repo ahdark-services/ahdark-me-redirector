@@ -23,6 +23,6 @@ func RequestID() gin.HandlerFunc {
 		c.Next()
 
 		logrus.WithContext(ctx).WithField("request_id", requestId).
-			Infof("request %s from %s, status %d", requestId, c.ClientIP(), c.Writer.Status())
+			Debugf("request to %s completed with status %d", c.Request.URL.Path, c.Writer.Status())
 	}
 }
