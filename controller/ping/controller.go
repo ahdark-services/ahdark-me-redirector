@@ -1,4 +1,4 @@
-package blog
+package ping
 
 import (
 	"context"
@@ -10,7 +10,7 @@ import (
 	"github.com/ahdark-services/ahdark-me-redirector/service/blog"
 )
 
-var tracer = otel.Tracer("controller.blog")
+var tracer = otel.Tracer("controller.ping")
 
 type Controller struct {
 	fx.In
@@ -21,7 +21,5 @@ func RegisterController(ctx context.Context, r *gin.Engine, c Controller) {
 	ctx, span := tracer.Start(ctx, "register-controller")
 	defer span.End()
 
-	r.GET("/blog/:id", c.RedirectPostHandler)
-	r.HEAD("/blog/:id", c.RedirectPostHandler)
-	r.OPTIONS("/blog/:id", c.RedirectPostHandler)
+	r.GET("/ping", c.PingHandler)
 }

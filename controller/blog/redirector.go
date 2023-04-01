@@ -10,6 +10,7 @@ import (
 func (ctr *Controller) RedirectPostHandler(c *gin.Context) {
 	ctx, span := tracer.Start(c.Request.Context(), "redirect-post-handler")
 	defer span.End()
+	c.Request = c.Request.WithContext(ctx)
 
 	id, err := strconv.Atoi(c.Param("id"))
 	if err != nil {
