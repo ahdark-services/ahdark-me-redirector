@@ -3,10 +3,12 @@ package infra
 import (
 	"context"
 	"fmt"
-	"github.com/ahdark-services/ahdark-me-redirector/internal/env"
+
 	"github.com/redis/go-redis/extra/redisotel/v9"
 	"github.com/redis/go-redis/v9"
 	"github.com/sirupsen/logrus"
+
+	"github.com/ahdark-services/ahdark-me-redirector/internal/env"
 )
 
 func NewRedisClient(ctx context.Context, config *env.Config) *redis.Client {
