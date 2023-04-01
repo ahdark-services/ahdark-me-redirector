@@ -15,7 +15,7 @@ func NewServer(ctx context.Context, tp *tracesdk.TracerProvider) (*gin.Engine, e
 	ctx, span := tracer.Start(ctx, "new-server")
 	defer span.End()
 
-	r := gin.New()
+	r := gin.Default()
 	r.Use(otelgin.Middleware("server.gin", otelgin.WithTracerProvider(tp)))
 
 	return r, nil
