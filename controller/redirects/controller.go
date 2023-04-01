@@ -33,13 +33,13 @@ func RegisterController(ctx context.Context, r *gin.Engine, c Controller) {
 
 	file, err := os.ReadFile(util.AbsolutePath(c.Config.Custom.RedirectConfig))
 	if err != nil {
-		logrus.WithContext(ctx).WithError(err).Fatal("failed to read redirect config")
+		logrus.WithContext(ctx).WithError(err).Warn("failed to read redirect config")
 		return
 	}
 
 	var config map[string]string
 	if err := json.Unmarshal(file, &config); err != nil {
-		logrus.WithContext(ctx).WithError(err).Fatal("failed to unmarshal redirect config")
+		logrus.WithContext(ctx).WithError(err).Warn("failed to unmarshal redirect config")
 		return
 	}
 
