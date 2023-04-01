@@ -11,5 +11,6 @@ func Module() fx.Option {
 	return fx.Module("internal.infra",
 		fx.Provide(NewRedisClient),
 		fx.Provide(NewCacheDriver),
+		fx.Provide(NewWpGoClient),
 	)
 }
