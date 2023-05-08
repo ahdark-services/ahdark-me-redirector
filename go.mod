@@ -12,7 +12,7 @@ require (
 	github.com/joho/godotenv v1.5.1
 	github.com/kelseyhightower/envconfig v1.4.0
 	github.com/redis/go-redis/extra/redisotel/v9 v9.0.2
-	github.com/redis/go-redis/v9 v9.0.2
+	github.com/redis/go-redis/v9 v9.0.4
 	github.com/samber/lo v1.38.1
 	github.com/sirupsen/logrus v1.9.0
 	github.com/takt-corp/fx-logrus v1.0.1
