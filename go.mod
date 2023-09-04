@@ -14,7 +14,7 @@ require (
 	github.com/redis/go-redis/extra/redisotel/v9 v9.0.2
 	github.com/redis/go-redis/v9 v9.1.0
 	github.com/samber/lo v1.38.1
-	github.com/sirupsen/logrus v1.9.0
+	github.com/sirupsen/logrus v1.9.3
 	github.com/takt-corp/fx-logrus v1.0.1
 	github.com/uptrace/uptrace-go/extra/otellogrus v1.1.0
 	go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin v0.40.0
